@@ -1,25 +1,25 @@
-var express = require("express");
+var express = require('express');
 var app = express();
 var fs = require('fs');
 
 // testing pulling JSON sample files
 
-app.get(`/11YVCHAR001`, function (req, res) {
-  fs.readFile(`11YVCHAR001.json`, function (err, data) {
+app.get("/11YVCHAR001", function (req, res) {
+  fs.readFile("data/11YVCHAR001.json", function (err, data) {
     console.log(data);
     res.end(data);
   });
 });
 
-app.get(`/11YVCHAR002`, function (req, res) {
-  fs.readFile(`11YVCHAR002.json`, function (err, data) {
+app.get("/11YVCHAR002", function (req, res) {
+  fs.readFile("data/11YVCHAR002.json", function (err, data) {
     console.log(data);
     res.end(data);
   });
 });
 
-app.get(`/15MPPN002-VK`, function (req, res) {
-  fs.readFile(`15MPPN002-VK.json`, function (err, data) {
+app.get("/15MPPN002-VK", function (req, res) {
+  fs.readFile("data/15MPPN002-VK.json", function (err, data) {
     console.log(data);
     res.end(data);
   });
@@ -27,8 +27,8 @@ app.get(`/15MPPN002-VK`, function (req, res) {
 
 // breakdown "year" data
 
-app.get(`/api/breakdown/year/11YVCHAR001`, function (req, res) {
-  fs.readFile(`11YVCHAR001.json`, function (err, data) {
+app.get("/api/breakdown/year/11YVCHAR001", function (req, res) {
+  fs.readFile("data/11YVCHAR001.json", function (err, data) {
     var object = JSON.parse(data);
     var components = object.components;
     // sort component data from highest percentage to lowest percentage
@@ -48,8 +48,8 @@ app.get(`/api/breakdown/year/11YVCHAR001`, function (req, res) {
   });
 });
 
-app.get(`/api/breakdown/year/11YVCHAR002`, function (req, res) {
-  fs.readFile(`11YVCHAR002.json`, function (err, data) {
+app.get("/api/breakdown/year/11YVCHAR002", function (req, res) {
+  fs.readFile("data/11YVCHAR002.json", function (err, data) {
     var object = JSON.parse(data);
     var components = object.components;
     // sort component data from highest percentage to lowest percentage
@@ -69,8 +69,8 @@ app.get(`/api/breakdown/year/11YVCHAR002`, function (req, res) {
   });
 });
 
-app.get(`/api/breakdown/year/15MPPN002-VK`, function (req, res) {
-  fs.readFile(`15MPPN002-VK.json`, function (err, data) {
+app.get("/api/breakdown/year/15MPPN002-VK", function (req, res) {
+  fs.readFile("data/15MPPN002-VK.json", function (err, data) {
     var object = JSON.parse(data);
     var components = object.components;
     // sort component data from highest percentage to lowest percentage
@@ -92,8 +92,8 @@ app.get(`/api/breakdown/year/15MPPN002-VK`, function (req, res) {
 
 // breakdown "variety" data
 
-app.get(`/api/breakdown/variety/11YVCHAR001`, function (req, res) {
-  fs.readFile(`11YVCHAR001.json`, function (err, data) {
+app.get("/api/breakdown/variety/11YVCHAR001", function (req, res) {
+  fs.readFile("data/11YVCHAR001.json", function (err, data) {
     var object = JSON.parse(data);
     var components = object.components;
     // sort component data from highest percentage to lowest percentage
@@ -113,8 +113,8 @@ app.get(`/api/breakdown/variety/11YVCHAR001`, function (req, res) {
   });
 });
 
-app.get(`/api/breakdown/variety/11YVCHAR002`, function (req, res) {
-  fs.readFile(`11YVCHAR002.json`, function (err, data) {
+app.get("/api/breakdown/variety/11YVCHAR002", function (req, res) {
+  fs.readFile("data/11YVCHAR002.json", function (err, data) {
     var object = JSON.parse(data);
     var components = object.components;
     // sort component data from highest percentage to lowest percentage
@@ -134,8 +134,8 @@ app.get(`/api/breakdown/variety/11YVCHAR002`, function (req, res) {
   });
 });
 
-app.get(`/api/breakdown/variety/15MPPN002-VK`, function (req, res) {
-  fs.readFile(`15MPPN002-VK.json`, function (err, data) {
+app.get("/api/breakdown/variety/15MPPN002-VK", function (req, res) {
+  fs.readFile("data/15MPPN002-VK.json", function (err, data) {
     var object = JSON.parse(data);
     var components = object.components;
     // sort component data from highest percentage to lowest percentage
@@ -157,8 +157,8 @@ app.get(`/api/breakdown/variety/15MPPN002-VK`, function (req, res) {
 
 // breakdown "region" data
 
-app.get(`/api/breakdown/region/11YVCHAR001`, function (req, res) {
-  fs.readFile(`11YVCHAR001.json`, function (err, data) {
+app.get("/api/breakdown/region/11YVCHAR001", function (req, res) {
+  fs.readFile("data/11YVCHAR001.json", function (err, data) {
     var object = JSON.parse(data);
     var components = object.components;
     // sort component data from highest percentage to lowest percentage
@@ -178,8 +178,8 @@ app.get(`/api/breakdown/region/11YVCHAR001`, function (req, res) {
   });
 });
 
-app.get(`/api/breakdown/region/11YVCHAR002`, function (req, res) {
-  fs.readFile(`11YVCHAR002.json`, function (err, data) {
+app.get("/api/breakdown/region/11YVCHAR002", function (req, res) {
+  fs.readFile("data/11YVCHAR002.json", function (err, data) {
     var object = JSON.parse(data);
     var components = object.components;
     // sort component data from highest percentage to lowest percentage
@@ -199,8 +199,8 @@ app.get(`/api/breakdown/region/11YVCHAR002`, function (req, res) {
   });
 });
 
-app.get(`/api/breakdown/region/15MPPN002-VK`, function (req, res) {
-  fs.readFile(`15MPPN002-VK.json`, function (err, data) {
+app.get("/api/breakdown/region/15MPPN002-VK", function (req, res) {
+  fs.readFile("data/15MPPN002-VK.json", function (err, data) {
     var object = JSON.parse(data);
     var components = object.components;
     // sort component data from highest percentage to lowest percentage
@@ -222,8 +222,8 @@ app.get(`/api/breakdown/region/15MPPN002-VK`, function (req, res) {
 
 // breakdown "year-variety" data
 
-app.get(`/api/breakdown/year-variety/11YVCHAR001`, function (req, res) {
-  fs.readFile(`11YVCHAR001.json`, function (err, data) {
+app.get("/api/breakdown/year-variety/11YVCHAR001", function (req, res) {
+  fs.readFile("data/11YVCHAR001.json", function (err, data) {
     var object = JSON.parse(data);
     var components = object.components;
     // sort component data from highest percentage to lowest percentage
@@ -242,8 +242,8 @@ app.get(`/api/breakdown/year-variety/11YVCHAR001`, function (req, res) {
   });
 });
 
-app.get(`/api/breakdown/year-variety/11YVCHAR002`, function (req, res) {
-  fs.readFile(`11YVCHAR002.json`, function (err, data) {
+app.get("/api/breakdown/year-variety/11YVCHAR002", function (req, res) {
+  fs.readFile("data/11YVCHAR002.json", function (err, data) {
     var object = JSON.parse(data);
     var components = object.components;
     // sort component data from highest percentage to lowest percentage
@@ -262,8 +262,8 @@ app.get(`/api/breakdown/year-variety/11YVCHAR002`, function (req, res) {
   });
 });
 
-app.get(`/api/breakdown/year-variety/15MPPN002-VK`, function (req, res) {
-  fs.readFile(`15MPPN002-VK.json`, function (err, data) {
+app.get("/api/breakdown/year-variety/15MPPN002-VK", function (req, res) {
+  fs.readFile("data/15MPPN002-VK.json", function (err, data) {
     var object = JSON.parse(data);
     var components = object.components;
     // sort component data from highest percentage to lowest percentage
