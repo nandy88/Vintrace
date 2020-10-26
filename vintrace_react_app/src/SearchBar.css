@@ -1,9 +1,5 @@
-* {
+*{
   font-family: 'Montserrat', sans-serif;
-}
-
-.fontAwesome { 
-  font-family: 'Helvetica', FontAwesome, sans-serif; 
 }
 
 input{
@@ -19,3 +15,4 @@ input{
   height: 48px;
   width: 624px;
 }
+
