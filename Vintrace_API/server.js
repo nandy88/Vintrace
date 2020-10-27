@@ -4,25 +4,16 @@ var fs = require('fs');
 
 // testing pulling JSON sample files
 
-app.get("/11YVCHAR001", function (req, res) {
-  fs.readFile("data/11YVCHAR001.json", function (err, data) {
-    console.log(data);
-    res.end(data);
-  });
-});
+app.get("/:vintraceID", function (req, res) {
+  var resourceID = req.params.vintraceID // get the ID from the request object
 
-app.get("/11YVCHAR002", function (req, res) {
-  fs.readFile("data/11YVCHAR002.json", function (err, data) {
+  fs.readFile(`data/${resourceID}.json`, function (err, data) { // use the id to dynamically find json file
+    if (err) { // if the client sends through something that doesn't match return a 404
+      res.status(404).send("Sorry, we can't find that")
+    }
     console.log(data);
     res.end(data);
-  });
-});
-
-app.get("/15MPPN002-VK", function (req, res) {
-  fs.readFile("data/15MPPN002-VK.json", function (err, data) {
-    console.log(data);
-    res.end(data);
-  });
+  })
 });
 
 // breakdown "year" data
@@ -142,7 +133,7 @@ app.get('/api/breakdown/year-variety/:vintraceID', function (req, res) {
 
 // app running on http://localhost:3000/
 
-app.listen(3000, () => {
-  console.log("Server running on port 3000");
+app.listen(8080, () => {
+  console.log("Server running on port 8080");
 });
 
