@@ -1,5 +1,4 @@
 {
-  "proxy": "http://localhost:8080",
   "name": "vintrace",
   "version": "1.0.0",
   "description": "",
