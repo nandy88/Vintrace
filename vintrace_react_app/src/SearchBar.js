@@ -1,6 +1,7 @@
 import React from 'react'
 import './SearchBar.css'
 import axios from "axios"
+import Suggestions from "./Suggestions"
 export default class SearchBar extends React.Component{
 
   state = {
@@ -32,12 +33,17 @@ export default class SearchBar extends React.Component{
 
   render() {
     return (
-      <input
-        placeholder="&#61442;   Search by lot code and description......" 
-        ref={input => this.search = input}
-        onChange={this.handleInputChange}
-      />
-    )
+      <form>
+        <input
+          placeholder="&#61442;   Search by lot code and description......"
+          ref={input => this.search = input}
+          onChange={this.handleInputChange}
+        />
+        <p>{this.state.query}</p>
+        <Suggestions results={this.state.results} />
+      </form>
+      )
+    }
+    
   }
-
-}
+  
